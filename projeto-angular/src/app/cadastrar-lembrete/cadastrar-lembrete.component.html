@@ -1,0 +1,42 @@
+<div id="formulario">
+<form class="example-form" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nome do Lembrete</mat-label>
+        <input matInput formControlName="arquivado">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput formControlName="conteudo"></textarea>
+        </mat-form-field>
+    
+  
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Selecione a urgência do lembrete</mat-label>
+        <mat-select disableRipple formControlName="prioridade">
+          <mat-option value="baixa">Baixa</mat-option>
+          <mat-option value="media">Média</mat-option>
+          <mat-option value="alta">Alta</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill" class="example-full-width" >
+        <mat-label>Selecione uma data para o lembrete</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="modificado">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+    </p>
+    
+
+    
+  
+    
+    <button mat-flat-button color="warn">Cadastrar</button>
+
+  </form>
+  </div>

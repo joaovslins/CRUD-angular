@@ -1,0 +1,47 @@
+<mat-toolbar>
+    <span>Edição de lembrete</span>
+  </mat-toolbar>
+  <div id="formulario">
+    <form class="example-form" #f="ngForm" (ngSubmit)="atualizaLembrete(lembrete)">
+      
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nome do Lembrete</mat-label>
+            <input matInput [(ngModel)]="lembrete.arquivado" #conteudo="ngModel" name="arquivado">
+          </mat-form-field>
+    
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput [(ngModel)]="lembrete.conteudo" #conteudo="ngModel" name="conteudo"></textarea>
+            </mat-form-field>
+        
+      
+        
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Selecione a urgência do lembrete</mat-label>
+            <mat-select disableRipple [(ngModel)]="lembrete.prioridade" #conteudo="ngModel" name="prioridade">
+              <mat-option value="baixa">Baixa</mat-option>
+              <mat-option value="media">Média</mat-option>
+              <mat-option value="alta">Alta</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+          <mat-form-field appearance="fill" class="example-full-width" >
+            <mat-label>Selecione uma data para o lembrete</mat-label>
+            <input matInput [matDatepicker]="picker" name="modificado" [(ngModel)]="lembrete.modificado" #conteudo="ngModel">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          
+        </p>
+        
+    
+        
+      
+        
+        <button mat-flat-button color="warn" style="margin-right: 1%;">Atualizar</button>
+        <button mat-flat-button routerLink="/" color="primary">Cancelar</button>
+
+    
+      </form>
+      </div>
